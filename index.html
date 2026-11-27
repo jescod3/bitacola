@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitàcola</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="pagina-bitacola" class="contenidor">
+
+        <header>
+            <h1>Bitàcola</h1>
+            <p>Deixar rastre del procés</p>
+            <div id="capcalera-projecte" hidden>
+
+    <div id="titol-projecte"></div>
+
+    <div id="informacio-projecte"></div>
+
+</div>
+            <button id="obrir-configuracio"
+        type="button"
+        title="Configuració"
+        aria-label="Obrir configuració">
+    ⚙
+</button>
+        </header>
+
+        <section class="nou-registre">
+
+            <div class="capcalera-registre">
+                <h2 id="titol-formulari">Nou registre</h2>
+                <input type="date" id="data">
+            </div>
+
+            <textarea
+    id="reflexio"
+    placeholder="Què vols deixar registrat avui?"
+></textarea>
+
+            <p class="orientacio">
+                Relaciona-ho amb la brúixola, si ho consideres pertinent.
+            </p>
+
+            <div class="etiquetes">
+
+                <button class="etiqueta comprendre" data-eix="Comprendre">
+                    Comprendre
+                </button>
+
+                <button class="etiqueta explorar" data-eix="Explorar">
+                    Explorar
+                </button>
+
+                <button class="etiqueta consolidar" data-eix="Consolidar">
+                    Consolidar
+                </button>
+
+                <button class="etiqueta connectar" data-eix="Connectar">
+                    Connectar
+                </button>
+
+                <button class="etiqueta documentar" data-eix="Documentar">
+                    Documentació
+                </button>
+
+            </div>
+            <div id="orientacio-eix" hidden></div>
+            <!-- VINCULACIÓ OPCIONAL AMB L'ALUMNAT -->
+
+<div id="vinculacio-alumnat" hidden>
+
+    <details id="selector-alumnat">
+
+        <summary>
+            Vincular amb alumnat (opcional)
+        </summary>
+
+        <div id="alumnes-seleccionables"></div>
+
+    </details>
+
+    <div id="alumnes-seleccionats"></div>
+
+</div>
+            <div class="accions-formulari">
+
+    <button id="desar">Desar registre</button>
+
+    <button id="cancel-lar" type="button" hidden>
+        Cancel·lar
+    </button>
+
+</div>
+
+        </section>
+
+        <!-- SEGUIMENT DEL PROCÉS -->
+
+<section class="seguiment">
+
+    <h2>Seguiment del procés</h2>
+
+    <p class="subtitol-seguiment">
+        Reflexions registrades per àmbit
+    </p>
+
+    <div id="grafic-eixos"></div>
+
+    <p class="nota-seguiment">
+        El gràfic reflecteix els àmbits documentats,
+        no el grau d'assoliment dels aprenentatges.
+    </p>
+
+</section>
+        <section class="quadern">
+
+    <h2>Quadern de bitàcola</h2>
+
+    <div id="filtres-eixos">
+
+        <button class="filtre-eix actiu" data-filtre="Tots">
+            Tots
+        </button>
+
+        <button class="filtre-eix comprendre" data-filtre="Comprendre">
+            Comprendre
+        </button>
+
+        <button class="filtre-eix explorar" data-filtre="Explorar">
+            Explorar
+        </button>
+
+        <button class="filtre-eix consolidar" data-filtre="Consolidar">
+            Consolidar
+        </button>
+
+        <button class="filtre-eix connectar" data-filtre="Connectar">
+            Connectar
+        </button>
+
+        <button class="filtre-eix documentar" data-filtre="Documentar">
+            Documentació
+        </button>
+
+    </div>
+<div id="filtre-alumnat-contenidor" hidden>
+
+    <label for="filtre-alumnat">
+        Filtrar per alumne:
+    </label>
+
+    <select id="filtre-alumnat">
+        <option value="Tots">Tot l'alumnat</option>
+    </select>
+
+</div>
+<div class="accions-quadern">
+
+    <button id="exportar-quadern" type="button">
+        ↓ Exportar quadern
+    </button>
+
+    <div id="opcions-exportacio" hidden>
+
+        <p>Quines reflexions vols exportar?</p>
+
+        <button id="exportar-tot" type="button">
+            Tot el quadern
+        </button>
+
+        <button id="exportar-seleccio" type="button">
+            Selecció actual
+        </button>
+
+        <button id="cancel-lar-exportacio" type="button">
+            Cancel·lar
+        </button>
+
+    </div>
+
+</div>
+    <div id="registres"></div>
+
+</section>
+
+        <footer>
+            Un recurs disponible quan es necessita.
+        </footer>
+
+    </main>
+<!-- PÀGINA DE CONFIGURACIÓ -->
+
+<div id="pagina-configuracio" class="contenidor" hidden>
+
+    <button id="tornar-bitacola" type="button">
+        ← Tornar a la bitàcola
+    </button>
+
+    <h1>Configuració</h1>
+
+    <section class="bloc-configuracio">
+
+        <h2>Dades del projecte</h2>
+
+<div class="graella-projecte">
+
+    <div>
+        <label for="nom-projecte">Nom del projecte</label>
+        <input type="text" id="nom-projecte">
+    </div>
+
+    <div>
+        <label for="nom-centre">Centre educatiu</label>
+        <input type="text" id="nom-centre">
+    </div>
+
+    <div>
+        <label for="nom-grup">Grup o nivell</label>
+        <input type="text" id="nom-grup">
+    </div>
+
+    <div>
+        <label for="curs-academic">Curs acadèmic</label>
+                <input type="text" id="curs-academic">
+    </div>
+
+</div>
+
+</section>
+    </section>
+
+    <section class="bloc-configuracio">
+
+        <h2>Alumnat participant</h2>
+
+<div id="llista-alumnes"></div>
+<details id="apartat-baixes" hidden>
+
+    <summary id="resum-baixes">
+        Alumnes donats de baixa
+    </summary>
+
+    <div id="llista-baixes"></div>
+
+</details>
+
+<p>Introdueix o enganxa els noms dels alumnes
+que vols incorporar, amb un nom per línia.</p>
+
+<textarea id="llista-importacio"
+    placeholder="Un nom per línia"
+    spellcheck="false"></textarea>
+
+</section>
+
+    <button id="desar-configuracio" type="button">
+        Desar configuració
+    </button>
+    <section class="bloc-configuracio bloc-copies">
+
+    <h2>Còpies de seguretat</h2>
+
+    <p>
+        Conserva una còpia de les reflexions, les dades
+        del projecte i l'alumnat participant.
+    </p>
+
+    <div class="accions-copies">
+
+        <button id="exportar-copia" type="button">
+            ↓ Exportar còpia
+        </button>
+
+        <button id="importar-copia" type="button">
+            ↑ Importar còpia
+        </button>
+
+    </div>
+
+    <input
+        type="file"
+        id="arxiu-copia"
+        accept=".json"
+        hidden
+    >
+
+    <p class="avis-copies">
+        La còpia pot contenir dades personals.
+        Conserva-la en un lloc segur.
+    </p>
+
+</section>
+
+</div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,930 @@
+
+:root {
+    --fons: #f5f4ef;
+    --paper: #ffffff;
+    --text: #333830;
+    --secundari: #777b74;
+    --vora: #dedfd8;
+
+    --comprendre: #78945b;
+    --explorar: #c39b39;
+    --consolidar: #bd8068;
+    --connectar: #568da8;
+    --documentar: #555b65;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--fons);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.contenidor {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* CAPÇALERA */
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: normal;
+    margin: 0;
+}
+
+header p {
+    color: var(--secundari);
+    margin: 0;
+    font-size: 16px;
+}
+
+/* ESPAIS PRINCIPALS */
+
+.nou-registre,
+.quadern {
+    background: var(--paper);
+    padding: 28px;
+    border: 1px solid var(--vora);
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 18px;
+}
+
+.capcalera-registre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.capcalera-registre h2 {
+    margin: 0;
+}
+
+/* DATA */
+
+input[type="date"] {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 12px;
+    border: 1px solid var(--vora);
+    border-radius: 8px;
+    color: var(--text);
+    background: var(--paper);
+}
+
+/* QUADRE DE REFLEXIÓ */
+
+textarea {
+    display: block;
+    width: 100%;
+    min-height: 180px;
+    padding: 18px;
+    border: 1px solid var(--vora);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: #fdfdfb;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: 2px solid var(--comprendre);
+    outline-offset: 2px;
+}
+
+textarea::placeholder {
+    color: #999d95;
+}
+
+.orientacio {
+    color: var(--secundari);
+    font-size: 14px;
+    margin-top: 22px;
+    margin-bottom: 12px;
+}
+
+/* ETIQUETES DE LA BRÚIXOLA */
+
+.etiquetes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.etiqueta {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 16px;
+    border: 1px solid var(--color-eix);
+    border-radius: 8px;
+    background: white;
+    color: var(--color-eix);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.comprendre {
+    --color-eix: var(--comprendre);
+}
+
+.explorar {
+    --color-eix: var(--explorar);
+}
+
+.consolidar {
+    --color-eix: var(--consolidar);
+}
+
+.connectar {
+    --color-eix: var(--connectar);
+}
+
+.etiqueta:hover {
+    background: color-mix(
+        in srgb,
+        var(--color-eix) 12%,
+        white
+    );
+}
+
+.etiqueta.activa {
+    background: var(--color-eix);
+    color: white;
+}
+
+/* DOCUMENTACIÓ: EIX TRANSVERSAL */
+
+.documentar .documentar {
+    --color-eix: var(--documentar);
+}
+
+.etiqueta.documentar {
+    background: #eef0f2;
+    border: 1px dashed var(--documentar);
+}
+
+.etiqueta.documentar.activa {
+    background: var(--documentar);
+    color: white;
+}
+
+/* BOTÓ DESAR */
+
+#desar {
+    display: block;
+    width: 100%;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #333830;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#desar:hover {
+    background: #4c5548;
+}
+
+/* REGISTRES DEL QUADERN */
+
+.registre {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--vora);
+}
+
+.registre:last-child {
+    border-bottom: none;
+}
+
+.registre-data {
+    font-size: 13px;
+    color: var(--secundari);
+}
+
+.registre-text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin: 10px 0;
+}
+
+.registre-etiquetes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mini-etiqueta {
+    background: var(--color-eix);
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+/* PEU DE PÀGINA */
+
+footer {
+    text-align: center;
+    color: var(--secundari);
+    font-size: 13px;
+    font-style: italic;
+    padding: 10px;
+}
+
+/* ADAPTACIÓ A PANTALLES PETITES */
+
+@media (max-width: 650px) {
+    .contenidor {
+        padding: 16px;
+    }
+
+    .nou-registre,
+    .quadern {
+        padding: 18px;
+    }
+
+    .etiquetes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 34px;
+    }
+}
+/* ETIQUETA DE DOCUMENTACIÓ AL QUADERN */
+
+.mini-etiqueta.documentar {
+    background: var(--documentar);
+    color: white;
+    display: inline-block;
+    margin: 0;
+    border: none;
+}
+
+.mini-etiqueta.documentar::after {
+    content: none;
+}/* ICONES D'INFORMACIÓ PEDAGÒGICA */
+
+.grup-etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+}
+
+.grup-etiqueta .etiqueta {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 4px;
+}
+
+.boto-info {
+    background: none;
+    border: none;
+    color: #999d95;
+    font-size: 17px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.boto-info:hover {
+    color: #333830;
+}/* PANELL D'ORIENTACIONS PEDAGÒGIQUES */
+
+#orientacio-eix {
+    background: #f8f8f5;
+    border-left: 4px solid var(--color-eix);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+#orientacio-eix h3 {
+    color: var(--color-eix);
+    font-size: 18px;
+    margin: 0 0 8px;
+}
+
+#orientacio-eix p {
+    margin: 8px 0;
+}
+
+#orientacio-eix .pregunta-eix {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#orientacio-eix p:last-child {
+    margin-bottom: 0;
+}/* ACCIONS DELS REGISTRES */
+
+.registre-data {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boto-accio {
+    background: transparent;
+    border: none;
+    color: #777b74;
+    font-size: 19px;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.registre-data .boto-accio:first-of-type {
+    margin-left: auto;
+}
+
+.boto-accio:hover {
+    background: #e9ebe5;
+    color: #333830;
+}
+/* BOTONS DEL FORMULARI */
+
+.accions-formulari {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.accions-formulari #desar {
+    flex: 1;
+    width: auto;
+    margin: 0;
+}
+
+#cancel-lar {
+    background: transparent;
+    border: 1px solid #b8bcb4;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 15px;
+    color: #555b52;
+    cursor: pointer;
+}
+
+#cancel-lar:hover {
+    background: #e9ebe5;
+}
+
+#cancel-lar[hidden] {
+    display: none !important;
+}
+/* BOTÓ DE CONFIGURACIÓ */
+
+header {
+    position: relative;
+}
+
+#obrir-configuracio {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #777b74;
+    font-size: 28px;
+    line-height: 1;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#obrir-configuracio:hover {
+    background: #e9ebe5;
+    color: #333830;
+}
+/* PÀGINA DE CONFIGURACIÓ */
+
+#pagina-configuracio[hidden],
+#pagina-bitacola[hidden] {
+    display: none !important;
+}
+
+#pagina-configuracio h1 {
+    margin: 24px 0;
+}
+
+.bloc-configuracio {
+    background: white;
+    border: 1px solid #deded6;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.bloc-configuracio h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.bloc-configuracio label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.bloc-configuracio input,
+.bloc-configuracio textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #d5d8d0;
+    border-radius: 8px;
+    font: inherit;
+    margin-bottom: 18px;
+}
+
+#llista-importacio {
+    min-height: 140px;
+    resize: vertical;
+}
+/* DISTRIBUCIÓ COMPACTA DE LES DADES DEL PROJECTE */
+
+.graella-projecte {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+
+.graella-projecte input {
+    padding: 8px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.graella-projecte label {
+    font-size: 13px;
+}
+
+.bloc-configuracio {
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .graella-projecte {
+        grid-template-columns: 1fr;
+    }
+}
+/* BOTONS DE CONFIGURACIÓ */
+
+#tornar-bitacola {
+    background: transparent;
+    border: none;
+    color: #777b74;
+    font-size: 14px;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+#tornar-bitacola:hover {
+    color: #333830;
+}
+
+#importar-alumnes,
+#afegir-alumne {
+    background: transparent;
+    border: 1px solid #b8bcb4;
+    border-radius: 8px;
+    color: #555b52;
+    padding: 9px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#importar-alumnes:hover,
+#afegir-alumne:hover {
+    background: #e9ebe5;
+}
+
+#desar-configuracio {
+    width: 100%;
+    background: #333830;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#desar-configuracio:hover {
+    background: #454b41;
+}
+/* LLISTA D'ALUMNES */
+
+.recompte-alumnes {
+    font-size: 13px;
+    color: #777b74;
+    margin-bottom: 12px;
+}
+
+.graella-alumnes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.fitxa-alumne {
+    background: #f0f1ec;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #333830;
+}
+/* ACCIONS DE LES FITXES D'ALUMNES */
+
+.fitxa-alumne {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.fitxa-alumne .boto-accio {
+    font-size: 17px;
+    padding: 2px 5px;
+}
+/* BOTÓ DE BAIXA D'ALUMNES */
+
+.fitxa-alumne .boto-accio:first-of-type {
+    margin-left: auto;
+}
+
+.boto-baixa:hover {
+    background: #f3e2df;
+    color: #a34d42;
+}
+/* ALUMNES DONATS DE BAIXA */
+
+#apartat-baixes {
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #777b74;
+}
+
+#resum-baixes {
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+#llista-baixes {
+    display: grid;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+#llista-baixes .fitxa-alumne {
+    background: #f7f7f4;
+    color: #777b74;
+}
+/* SELECCIÓ D'ALUMNAT */
+
+#vinculacio-alumnat {
+    margin: 18px 0;
+}
+
+#selector-alumnat summary {
+    cursor: pointer;
+    font-size: 14px;
+    color: #777b74;
+}
+
+#alumnes-seleccionables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.alumne-seleccionable {
+    background: #f0f1ec;
+    border: 1px solid #d8dcd3;
+    border-radius: 6px;
+    padding: 9px;
+    font: inherit;
+    font-size: 14px;
+    color: #555b52;
+    cursor: pointer;
+}
+
+.alumne-seleccionable.actiu {
+    background: #dce6d2;
+    border-color: #78945b;
+    color: #405b32;
+}
+/* RESUM DELS ALUMNES SELECCIONATS */
+
+#alumnes-seleccionats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+#alumnes-seleccionats:not(:empty) {
+    margin-top: 12px;
+}
+
+.alumne-vinculat {
+    background: #e3e8dc;
+    color: #405b32;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.alumne-vinculat:hover {
+    background: #d2ddc7;
+}
+/* ALUMNAT VINCULAT ALS REGISTRES */
+
+.registre-alumnes {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #777b74;
+}
+/* SEGUIMENT DEL PROCÉS */
+
+.seguiment {
+    background: #ffffff;
+    border: 1px solid #e0e2da;
+    border-radius: 10px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.subtitol-seguiment {
+    font-size: 14px;
+    color: #777b74;
+    margin-bottom: 22px;
+}
+
+.fila-seguiment {
+    display: grid;
+    grid-template-columns: 110px 1fr 30px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.nom-eix {
+    font-size: 14px;
+}
+
+.pista-barra {
+    height: 16px;
+    background: #eeeee9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.barra-seguiment {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.nombre-seguiment {
+    font-size: 14px;
+    text-align: right;
+    color: #555b52;
+}
+
+.fila-seguiment:last-child {
+    border-top: 1px solid #e0e2da;
+    padding-top: 16px;
+    margin-top: 20px;
+}
+
+.nota-seguiment {
+    font-size: 12px;
+    color: #777b74;
+    margin-top: 22px;
+}
+/* FILTRES DEL QUADERN */
+
+#filtres-eixos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--vora);
+}
+
+.filtre-eix {
+    --color-eix: #333830;
+    background: white;
+    color: var(--color-eix);
+    border: 1px solid var(--color-eix);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filtre-eix.comprendre {
+    --color-eix: var(--comprendre);
+}
+
+.filtre-eix.explorar {
+    --color-eix: var(--explorar);
+}
+
+.filtre-eix.consolidar {
+    --color-eix: var(--consolidar);
+}
+
+.filtre-eix.connectar {
+    --color-eix: var(--connectar);
+}
+
+.filtre-eix.documentar {
+    --color-eix: var(--documentar);
+}
+
+.filtre-eix:hover {
+    background: #f0f1ec;
+}
+
+.filtre-eix.actiu {
+    background: var(--color-eix);
+    color: white;
+}
+/* FILTRE PER ALUMNAT */
+
+#filtre-alumnat-contenidor {
+    margin-bottom: 20px;
+}
+
+#filtre-alumnat-contenidor label {
+    font-size: 13px;
+    color: var(--secundari);
+    margin-right: 8px;
+}
+
+#filtre-alumnat {
+    background: white;
+    border: 1px solid var(--vora);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    max-width: 100%;
+    cursor: pointer;
+}
+/* CAPÇALERA DEL PROJECTE */
+
+#capcalera-projecte {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--vora);
+}
+
+#titol-projecte {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+#informacio-projecte {
+    font-size: 14px;
+    color: var(--secundari);
+    margin-top: 3px;
+}
+
+#titol-projecte:empty,
+#informacio-projecte:empty {
+    display: none;
+}
+/* CÒPIES DE SEGURETAT */
+
+.bloc-copies {
+    margin-top: 30px;
+}
+
+.bloc-copies p {
+    font-size: 14px;
+    color: var(--secundari);
+}
+
+.accions-copies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.accions-copies button {
+    flex: 1;
+    background: white;
+    border: 1px solid #b8bcb4;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.accions-copies button:hover {
+    background: #e9ebe5;
+}
+
+.bloc-copies .avis-copies {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+#arxiu-copia[hidden] {
+    display: none;
+}
+/* EXPORTACIÓ DEL QUADERN */
+
+.accions-quadern {
+    margin: 16px 0 24px;
+}
+
+#exportar-quadern {
+    background: transparent;
+    border: 1px solid #b8bcb4;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #555b50;
+    cursor: pointer;
+}
+
+#exportar-quadern:hover {
+    background: #e9ebe5;
+}
+
+#opcions-exportacio {
+    margin-top: 12px;
+    padding: 16px;
+    background: #f5f5f0;
+    border: 1px solid #d8dbd3;
+    border-radius: 10px;
+}
+
+#opcions-exportacio p {
+    font-size: 14px;
+    margin: 0 0 12px;
+}
+
+#opcions-exportacio button {
+    background: white;
+    border: 1px solid #b8bcb4;
+    border-radius: 7px;
+    padding: 9px 14px;
+    margin: 4px 6px 4px 0;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#opcions-exportacio button:hover {
+    background: #e9ebe5;
+}
+
+#opcions-exportacio[hidden] {
+    display: none;
+}
